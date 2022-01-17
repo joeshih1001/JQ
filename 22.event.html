@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">white</button>
+    <h2>Hello World</h2>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+        <script>
+            // $(".btn").click(function(){
+            //     console.log("click");
+            //     $("p").css("color","white");
+            // })
+            $(".btn").mousedown(function(){
+                console.log("mousedown");
+                $("h2").css("color","blue");
+            })
+            $(".btn").mouseup(function(){
+                console.log("mouseup");
+                $("h2").css("color","red");
+            })
+            $(".btn").hover(function(){
+                console.log("hover1");
+                $("h2").css("font-size","72px");
+            },function(){
+                console.log("hover2");
+                $("h2").css("font-size","32px");
+            })
+
+            
+          
+        </script>
+</body>
+</html>

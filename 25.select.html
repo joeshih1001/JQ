@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.css" />
+  </head>
+  <body>
+        <div class="container">
+            <div class="row">
+                <select name="city" id="city">
+                    <option value="0">基隆</option>
+                    <option value="1">台北</option>
+                    <option value="2">新北</option>
+                </select>
+
+                <select name="dis" id="dis">
+                    <option value="0">七堵區</option>
+                    <option value="1">暖暖區</option>
+                    <option value="2">中正區</option>
+                </select>
+            </div>
+        </div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.js"></script>
+    <script>
+        let distruct = [
+            ["七堵區", "暖暖區", "中正區"],
+            ["大安區", "內湖區", "南港區"],
+            ["中和區", "永和區", "板橋區"]
+        ];
+
+        $("#city").change(function(){
+            // console.log($("#city").val())
+            
+            $("#dis option").each(function(index,value){
+                // console.log($(this))
+                $(value).text(distruct[$("#city").val()][index])
+            })
+
+        })
+        
+    </script>
+  </body>
+</html>
