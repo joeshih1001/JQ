@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.css" />
+    <style>
+        .colorArea {
+            height: 600px;
+            background-color: azure;
+        }
+        .colorSelectArea {
+            height: 600px;
+            border-color: antiquewhite;
+            border: 1px solid #ccc;
+        }
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 5px;
+            
+        }
+       .circle:nth-child(1) {
+            background-color: lightgreen;
+        }
+        .circle:nth-child(2) {
+            background-color: lightcoral;
+        }
+        .circle:nth-child(3) {
+            background-color: lightslategrey;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex">
+                <div class="col-6 colorArea mx-3">
+                    
+                </div>
+                <div class="col-6 colorSelectArea mx-3 d-flex">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.js"></script>
+    <script>
+        $(".circle").click(function(){
+            $(".colorArea").css("background-color" ,$(this).css("background-color"))
+        })
+    </script>
+  </body>
+</html>

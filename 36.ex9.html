@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex9</title>
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.css" />
+    <style>
+        p{
+            transition: 0.5s;
+        }
+        .fontS{
+            font-size: 0.8rem;
+        }
+        .fontM{
+            font-size: 1.2rem;
+        }
+        .fontL{
+            font-size: 1.4rem;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="btn-group">
+                <button class="btn btn-info">S</button>
+                <button class="btn btn-info">M</button>
+                <button class="btn btn-info">L</button>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, doloremque blanditiis quia dolores architecto quod aperiam totam reiciendis necessitatibus temporibus voluptates asperiores numquam sunt tempore, eligendi, praesentium quos error hic.</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis consectetur quam nisi autem at quia facilis! Perspiciatis illo voluptas, sed quas aspernatur porro fugit fuga asperiores ipsum quod obcaecati! Amet.</p>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.js"></script>
+    <script>
+        // $(".btnS").on("click", function(){
+        //     $("p").addClass("fontS");
+        //     $("p").removeClass("fontM fontL")
+        // })
+        // $(".btnM").on("click", function(){
+        //     $("p").addClass("fontM");
+        //     $("p").removeClass("fontL")
+            
+        // })
+        // $(".btnL").on("click", function(){
+        //     $("p").addClass("fontL");
+        // })
+
+        $(".btn").click(function(){
+            if($(this).is(":contains('S')")){
+                $("p").removeClass();
+                $("p").addClass("fontS");
+
+            }
+            if($(this).is(":contains('M')")){
+                $("p").removeClass();
+                $("p").addClass("fontM");
+                
+            }
+            if($(this).is(":contains('L')")){
+                $("p").removeClass();
+                $("p").addClass("fontL");
+                
+            }
+        })
+    </script>
+  </body>
+</html>
