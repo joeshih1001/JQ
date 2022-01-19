@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .bigBox {
+            width: 100%;
+            height: 800px;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            margin: 20px;
+            opacity: 1;
+            transition: 0.5s;
+            
+        }
+        .sty1 {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bigBox"></div>
+    <div class="box sty1"></div>
+    <div class="bigBox"></div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+        <script>
+            // console.log($(".box").offset())
+            // console.log($(".box").offset().top)
+            // console.log($(".box").offset().left)
+            
+            $(window).scroll(function(){
+                console.log($(window).scrollTop());
+                if($(window).scrollTop() >= 342){
+                    $(".box").removeClass("sty1");
+                }
+                if($(window).scrollTop() <= 342){
+                    $(".box").addClass("sty1");
+                }
+            })
+        </script>
+</body>
+</html>
