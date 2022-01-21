@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.css" />
+    <style>
+        .wrap {
+          max-width: 800px;
+          height: 400px;
+          overflow: hidden;
+          margin: 50px auto;
+          position: relative;
+        }
+  
+        ul.img-wrap {
+          display: flex;
+          width: 4000px;
+          transition: 0.5s;
+          transform: translateX(0px);
+        }
+  
+        li img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+  
+        ul.slider-dots {
+          position: absolute;
+          bottom: 0;
+          list-style: none;
+          padding-left: 0;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+        }
+  
+        .slider-dots li {
+          width: 40px;
+          height: 10px;
+          border: 1px solid #fff;
+          margin: 10px;
+        }
+  
+        .slider-dots li:nth-child(1) {
+          background: #fff;
+        }
+        .selLeft {
+          position: absolute;
+          color: white;
+          left: 0;
+          background-color: rgb(255,0,0,0.2);
+          width: 50px;
+          height: 100%;
+          z-index: 20;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .selRight {
+          position: absolute;
+          color: white;
+          right: 0;
+          background-color: rgb(255,0,0,0.2);
+          width: 50px;
+          height: 100%;
+          z-index: 20;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+      </style>
+    </head>
+    <body>
+      <div class="wrap">
+        <div class="selLeft"><</div>
+        <div class="selRight">></div>
+        <ul class="list-unstyled img-wrap">
+          <li><img src="./imgs/slide1.jpg" alt="" /></li>
+          <li><img src="./imgs/slide2.jpg" alt="" /></li>
+          <li><img src="./imgs/slide3.jpg" alt="" /></li>
+          <li><img src="./imgs/slide4.jpg" alt="" /></li>
+          <li><img src="./imgs/slide5.jpg" alt="" /></li>
+        </ul>
+        
+  
+        <ul class="slider-dots">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.js"></script>
+    <script>
+        $(".slider-dots li").hover(function () {
+        console.log("this", $(this).index());
+        $(this)
+          .css("background", "#fff")
+          .siblings()
+          .css("background", "transparent");
+
+        // if ($(this).index() === 0) {
+        //   $("ul.img-wrap").css("transform", "translateX(0px)");
+        // }
+        // if ($(this).index() === 1) {
+        //   $("ul.img-wrap").css("transform", "translateX(-800px)");
+        // }
+        // if ($(this).index() === 2) {
+        //   $("ul.img-wrap").css("transform", "translateX(-1600px)");
+        // }
+        const moveX = $(this).index();
+        $("ul.img-wrap").css("transform", `translateX(${-800 * moveX}px)`);
+      });
+
+       const page = 0;
+      $(".selLeft").click(function(){
+        const moveX = index(page);
+        $("ul.img-wrap").css("transform", `translateX(${moveX}px)`);
+      })
+
+        
+  
+    </script>
+  </body>
+</html>
